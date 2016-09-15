@@ -1,6 +1,6 @@
 {
   "name": "angular-indeterminate",
-  "version": "1.0.1",
+  "version": "1.0.0",
   "description": "Tri-state indeterminate checkboxes in Angular",
   "scripts": {
     "test": "gulp unit"
