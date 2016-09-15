@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "Tri-state indeterminate checkboxes in Angular",
   "scripts": {
-    "test": "gulp unit"
+    "test": "gulp unit",
+    "precommit": "gulp unit && gulp"
   },
   "repository": {
     "type": "git",
