@@ -4,8 +4,9 @@
   "description": "Tri-state indeterminate checkboxes in Angular",
   "scripts": {
     "test": "gulp unit",
-    "precommit": "gulp unit && gulp"
+    "precommit": "echo 'Running pre-commit tasks...'; gulp unit && gulp && git add dist"
   },
+  "pre-commit": ["precommit"],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/tjsail33/angular-indeterminate.git"
@@ -42,6 +43,7 @@
     "karma-junit-reporter": "^1.1.0",
     "karma-phantomjs-launcher": "^1.0.2",
     "karma-spec-reporter": "0.0.26",
-    "phantomjs-prebuilt": "^2.1.12"
+    "phantomjs-prebuilt": "^2.1.12",
+    "pre-commit": "^1.1.3"
   }
 }
