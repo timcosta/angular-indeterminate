@@ -11,9 +11,9 @@ bower install --save angular-indeterminate
 ```
 and then include `(node_modules|bower_components)/angular-indeterminate/dist/angular-indeterminate.js` in your dependencies.
 
-add `ngIndeterminate` to your angular module declaration like so:
+add `ngIndeterminant` to your angular module declaration like so:
 ```javascript
-angular.module('myApp', ['ngIndeterminate']);
+angular.module('myApp', ['ngIndeterminant']);
 ```
 and now you are good to go!
 
@@ -47,7 +47,7 @@ optional. defaults to `adminDisabled`. if the value at this key is truthy, angul
 ```
 
 ### ngTrueValue and ngFalseValue
-optional, but must co-exist if set. defaults to `true` and `false` respectively. used for custom true and valse values when checking the indeterminate-checkbox. see [input[checkbox]](https://docs.angularjs.org/api/ng/input/input%5Bcheckbox%5D) for more information.
+optional, but must co-exist if set. defaults to `true` and `false` respectively. used for custom true and false values when checking the indeterminate-checkbox. see [input[checkbox]](https://docs.angularjs.org/api/ng/input/input%5Bcheckbox%5D) for more information.
 
 ```html
 <input type='checkbox' indeterminate="vm.myList" ng-false-value="0" ng-true-value="1" />
