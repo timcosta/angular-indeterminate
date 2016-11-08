@@ -7,17 +7,23 @@ module.exports = function(config) {
             'node_modules/jquery/dist/jquery.js',
             'node_modules/angular/angular.js',
             'node_modules/angular-mocks/angular-mocks.js',
-            'src/*.coffee',
-            'tests/*.coffee'
+            'index.js',
+            'spec.js'
         ],
         reporters: ['coverage','spec','junit'],
         preprocessors: {
-            'src/*.coffee': ['coverage'],
-            'tests/*.coffee': ['coffee']
+            '*.js': ['coverage', 'babel'],
         },
-        coffeePreprocessor: {
+        babelPreprocessor: {
             options: {
-                sourceMap: true
+                presets: ['es2015'],
+                sourceMap: 'inline'
+            },
+            filename: function (file) {
+                return file.originalPath.replace(/\.js$/, '.es5.js');
+            },
+            sourceFileName: function (file) {
+                return file.originalPath;
             }
         },
         junitReporter: {
@@ -27,12 +33,6 @@ module.exports = function(config) {
         },
         coverageReporter: {
             dir : 'coverage',
-            instrumenters: {
-                ibrik: require('ibrik')
-            },
-            instrumenter: {
-                '**/*.coffee': 'ibrik'
-            },
             reporters: [
                 { type: 'cobertura', subdir: '.'},
                 { type: 'html', subdir: '.' }
