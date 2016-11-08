@@ -50,4 +50,4 @@ angular.module('ngIndeterminate', [])
         };
     });
 
-if (typeof exports !== 'undefined') exports = 'ngIndeterminate';
+if (typeof exports !== 'undefined' && typeof module !== 'undefined') module.exports = exports = 'ngIndeterminate';
