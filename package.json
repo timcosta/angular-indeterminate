@@ -4,7 +4,7 @@
   "description": "Tri-state indeterminate checkboxes in Angular",
   "scripts": {
     "test": "gulp unit",
-    "precommit": "echo 'Running pre-commit tasks...'; gulp unit && gulp && git add dist"
+    "precommit": "echo 'Running pre-commit tasks...'; gulp unit"
   },
   "pre-commit": [
     "precommit"
