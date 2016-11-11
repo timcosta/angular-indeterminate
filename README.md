@@ -11,9 +11,11 @@ bower install --save angular-indeterminate
 ```
 and then include `(node_modules|bower_components)/angular-indeterminate/dist/angular-indeterminate.js` in your dependencies.
 
-add `ngIndeterminant` to your angular module declaration like so:
+add `ngIndeterminate` to your angular module declaration like so:
 ```javascript
-angular.module('myApp', ['ngIndeterminant']);
+import ngIndeterminate from 'angular-indeterminate';
+
+angular.module('myApp', [ngIndeterminant]);
 ```
 and now you are good to go!
 
