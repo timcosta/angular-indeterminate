@@ -1,5 +1,7 @@
 angular.module('ngIndeterminate', [])
     .directive('indeterminate', ($parse) => {
+        'ngInject';
+
         return {
             restrict: 'AE',
             link: (scope, elem, attrs) => {
