@@ -47,6 +47,8 @@
 	'use strict';
 
 	angular.module('ngIndeterminate', []).directive('indeterminate', function ($parse) {
+	    'ngInject';
+
 	    return {
 	        restrict: 'AE',
 	        link: function link(scope, elem, attrs) {
