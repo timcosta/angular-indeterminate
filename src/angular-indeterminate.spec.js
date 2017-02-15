@@ -1,19 +1,23 @@
+import angular from 'angular';
+import 'angular-mocks';
+import ngIndeterminate from './angular-indeterminate';
+
 describe('Indeterminate Checkbox Directive', function() {
 
-    beforeEach(module('ngIndeterminate'));
+    beforeEach(window.module(ngIndeterminate));
 
-    beforeEach(inject(function($compile, $rootScope) {
+    beforeEach(window.inject(function($compile, $rootScope) {
         this.rootScope = $rootScope;;
         this.compile = $compile;
     }));
 
     it('should create an indeterminate checkbox', function() {
         const html = '<div><input class="indt" type="checkbox" indeterminate="ctrl.list" /><input type="checkbox" ng-repeat="item in ctrl.list" ng-model="item.enabled" /></div>';;
-        const scope = this.rootScope.$new();;
+        const scope = this.rootScope.$new();
         scope.ctrl = {
             list: [],
         };
-        const elem = this.compile(html)(scope);;
+        const elem = this.compile(html)(scope);
         $('body').append(elem);;
         scope.$digest();
         expect(elem.find('.indt')[0].indeterminate).toBeFalsy();

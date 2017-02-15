@@ -2,11 +2,11 @@ const webpack = require('webpack');
 
 module.exports = {
     entry: {
-        'angular-indeterminate': './angular-indeterminate.js',
+        'angular-indeterminate': './src/angular-indeterminate.js',
     },
     output: {
-        path: './',
-        filename: 'index.js',
+        path: './dist',
+        filename: 'angular-indeterminate.js',
     },
     devtool: 'cheap-source-map',
     module: {
@@ -14,7 +14,7 @@ module.exports = {
             {
                 test: /\.js$/,
                 exclude: /node_modules/,
-                loader: 'babel-loader',
+                loaders: ['ng-annotate', 'babel-loader'],
             },
         ],
     },

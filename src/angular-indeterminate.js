@@ -1,4 +1,4 @@
-angular.module('ngIndeterminate', [])
+module.exports = angular.module('ngIndeterminate', [])
     .directive('indeterminate', ($parse) => {
         'ngInject';
 
@@ -50,6 +50,4 @@ angular.module('ngIndeterminate', [])
                 });
             },
         };
-    });
-
-if (typeof exports !== 'undefined' && typeof module !== 'undefined') module.exports = exports = 'ngIndeterminate';
+    }).name;
