@@ -15,7 +15,7 @@ add `ngIndeterminate` to your angular module declaration like so:
 ```javascript
 import ngIndeterminate from 'angular-indeterminate';
 
-angular.module('myApp', [ngIndeterminant]);
+angular.module('myApp', [ngIndeterminate]);
 ```
 and now you are good to go!
 
