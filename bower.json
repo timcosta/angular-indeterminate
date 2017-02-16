@@ -1,6 +1,6 @@
 {
   "name": "angular-indeterminate",
-  "version": "v3.0.0-0",
+  "version": "v3.0.1",
   "description": "Tri-state indeterminate checkboxes in Angular",
   "main": "dist/angular-indeterminate.js",
   "authors": [
