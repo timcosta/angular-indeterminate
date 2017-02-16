@@ -3,10 +3,11 @@ const webpack = require('webpack');
 module.exports = {
     entry: {
         'angular-indeterminate': './src/angular-indeterminate.js',
+        'angular-indeterminate.min': './src/angular-indeterminate.js',
     },
     output: {
         path: './dist',
-        filename: 'angular-indeterminate.js',
+        filename: '[name].js',
     },
     devtool: 'cheap-source-map',
     module: {
@@ -18,4 +19,10 @@ module.exports = {
             },
         ],
     },
+    plugins: [
+        new webpack.optimize.UglifyJsPlugin({
+            include: /\.min\.js$/,
+            minimize: true,
+        })
+    ],
 };
