@@ -52,6 +52,7 @@
 	    return {
 	        restrict: 'AE',
 	        link: function link(scope, elem, attrs) {
+	            var indeterminateClickBehavior = attrs.indeterminateClickBehavior || 'select';
 	            var propKey = attrs.indeterminateKey || 'enabled';
 	            var disabledKey = attrs.indeterminateDisabled || 'adminDisabled';
 	            var trueValue = true;
@@ -96,7 +97,7 @@
 	                        return v[propKey] === trueValue;
 	                    });
 	                    var setValue = void 0;
-	                    if (enabled.length < values.length) {
+	                    if (enabled.length < values.length && indeterminateClickBehavior !== 'clear') {
 	                        setValue = trueValue;
 	                    } else {
 	                        setValue = falseValue;
