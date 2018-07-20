@@ -166,6 +166,33 @@ describe('Indeterminate Checkbox Directive', function() {
             expect(elem.find('.indt').is(':checked')).toBeTruthy();
         });
 
+        it('when indeterminate and should become de-selected', function() {
+            const html = '<div><input class="indt" type="checkbox" indeterminate="ctrl.list" indeterminate-click-behavior="clear" /><input type="checkbox" ng-repeat="item in ctrl.list" ng-model="item.enabled" /></div>';
+            const scope = this.rootScope.$new();
+            scope.ctrl = {
+                list: [],
+            };
+            const elem = this.compile(html)(scope);
+            $('body').append(elem);
+            scope.$digest();
+            expect(elem.find('.indt')[0].indeterminate).toBeFalsy();
+            expect(elem.find('.indt').is(':checked')).toBeTruthy();
+            scope.ctrl.list.push({ enabled: false });
+            scope.$digest();
+            expect(elem.find('.indt')[0].indeterminate).toBeFalsy();
+            expect(elem.find('.indt').is(':checked')).toBeFalsy();
+            scope.ctrl.list.push({ enabled: true });
+            scope.$digest();
+            expect(elem.find('.indt')[0].indeterminate).toBeTruthy();
+            expect(elem.find('.indt').is(':checked')).toBeFalsy();
+            elem.find('.indt').click()
+            expect(elem.find('.indt')[0].indeterminate).toBeFalsy();
+            scope.$digest();
+            expect(elem.find('.indt')[0].indeterminate).toBeFalsy();
+            expect(scope.ctrl.list[0].enabled).toBeFalsy();
+            expect(elem.find('.indt').is(':checked')).toBeFalsy();
+        });
+
         it('when checked', function() {
             const html = '<div><input class="indt" type="checkbox" indeterminate="ctrl.list" /><input type="checkbox" ng-repeat="item in ctrl.list" ng-model="item.enabled" /></div>';
             const scope = this.rootScope.$new();

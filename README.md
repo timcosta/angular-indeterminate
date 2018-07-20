@@ -48,6 +48,13 @@ optional. defaults to `adminDisabled`. if the value at this key is truthy, angul
 <input type='checkbox' indeterminate="vm.myList" indeterminate-disabled="hidden" />
 ```
 
+### indeterminateClickBehavior
+What to do when a user clicks on an indeterminate checkbox. Defaults to `select` which will select all objects, also valid is `clear` which will de-select all objects.
+```html
+<input type='checkbox' indeterminate-click-behavior="select" />
+<input type='checkbox' indeterminate-click-behavior="clear" />
+```
+
 ### ngTrueValue and ngFalseValue
 optional, but must co-exist if set. defaults to `true` and `false` respectively. used for custom true and false values when checking the indeterminate-checkbox. see [input[checkbox]](https://docs.angularjs.org/api/ng/input/input%5Bcheckbox%5D) for more information.
 

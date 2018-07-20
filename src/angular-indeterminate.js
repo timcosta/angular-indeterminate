@@ -5,6 +5,7 @@ module.exports = angular.module('ngIndeterminate', [])
         return {
             restrict: 'AE',
             link: (scope, elem, attrs) => {
+                let indeterminateClickBehavior = attrs.indeterminateClickBehavior || 'select';
                 let propKey = attrs.indeterminateKey || 'enabled';
                 let disabledKey = attrs.indeterminateDisabled || 'adminDisabled';
                 let trueValue = true;
@@ -38,7 +39,7 @@ module.exports = angular.module('ngIndeterminate', [])
                         const values = scope.$eval(attrs.indeterminate).filter(v => !v[disabledKey]);
                         const enabled = values.filter(v => v[propKey] === trueValue);
                         let setValue;
-                        if (enabled.length < values.length) {
+                        if (enabled.length < values.length && indeterminateClickBehavior !== 'clear') {
                             setValue = trueValue;
                         } else {
                             setValue = falseValue;
