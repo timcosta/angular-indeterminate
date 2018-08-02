@@ -42,7 +42,7 @@
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	'use strict';
 
@@ -97,7 +97,9 @@
 	                        return v[propKey] === trueValue;
 	                    });
 	                    var setValue = void 0;
-	                    if (enabled.length < values.length && indeterminateClickBehavior !== 'clear') {
+	                    if (enabled.length == 0) {
+	                        setValue = trueValue;
+	                    } else if (enabled.length < values.length && indeterminateClickBehavior !== 'clear') {
 	                        setValue = trueValue;
 	                    } else {
 	                        setValue = falseValue;
@@ -111,6 +113,6 @@
 	    };
 	}]).name;
 
-/***/ }
+/***/ })
 /******/ ]);
 //# sourceMappingURL=angular-indeterminate.js.map
